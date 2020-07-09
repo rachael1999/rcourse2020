@@ -1,0 +1,33 @@
+---
+title: "gapminder-wrangle"
+author: "Ying Yin"
+date: "2020/7/9"
+output: html_document
+---
+
+```{r setup, message =F,include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Learn `dplyr` using gapminder dataset
+
+```{r}
+gapminder <- readr::read_csv('data/gapminder.csv') 
+```
+
+```{r}
+filter(gapminder, lifeExp < 29)
+```
+```{r}
+filter(gapminder, country == "Mexico")
+filter(gapminder, country == "China")
+```
+```{r}
+filter(gapminder, country %in% c("Mexico", "Peru"))
+```
+
+```{r}
+filter(gapminder, country == "Mexico",year == 2002)
+```
+
